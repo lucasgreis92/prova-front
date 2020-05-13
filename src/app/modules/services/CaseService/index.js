@@ -1,17 +1,17 @@
 const CaseService = {
 
     findAll: () => {
-        return fetch('rs/v1/case')
+        return fetch('api/case')
         .then(res => CaseService.treatError(res))
         .then(res => res.json());
     },
     findById: (id) => {
-        return fetch(`rs/v1/case/${id}`)
+        return fetch(`api/case/${id}`)
         .then(res => CaseService.treatError(res))
         .then(res => res.json());
     },
     put: (id, body) => {
-        return fetch(`rs/v1/case/${id}`, {
+        return fetch(`api/case/${id}`, {
              method: 'PUT',
              headers: { 'Content-Type': 'application/json' },
              body: body
@@ -20,7 +20,7 @@ const CaseService = {
         .then(res => res.json());
     },
     post: (body) => {
-        return fetch(`rs/v1/case`, {
+        return fetch(`api/case`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: body
