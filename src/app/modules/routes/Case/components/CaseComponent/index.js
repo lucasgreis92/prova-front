@@ -75,7 +75,7 @@ class CaseComponent extends Component {
         }
         if (this.state.case.id === 'new') {
             body.id = undefined;
-            body.access = 'public';
+            body.access = 'PUBLIC';
             body = JSON.stringify(body);
             console.log(body);
             CaseService.post(body)
